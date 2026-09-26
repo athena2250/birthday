@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>RITHVIKA.EXE — The Quest to Unlock Her Heart</title>
+<meta name="description" content="A 90s PC game about understanding Rithvika. Estimated difficulty: impossible.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' fill='%23000080'/><rect x='2' y='3' width='12' height='9' fill='%23c0c0c0'/><rect x='3' y='4' width='10' height='7' fill='%23008080'/><rect x='6' y='6' width='2' height='2' fill='%23ff5f7e'/><rect x='9' y='6' width='2' height='2' fill='%23ff5f7e'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/rithvika.css">
+</head>
+<body>
+
+<div id="crt">
+  <div id="desktop">
+
+    <div class="win" id="mainwin">
+      <div class="titlebar" id="titlebar">
+        <span class="tb-icon" aria-hidden="true"></span>
+        <span class="tb-text" id="tbText">RITHVIKA.EXE</span>
+        <span class="tb-btns" aria-hidden="true">
+          <b>_</b><b>□</b><b class="x">✕</b>
+        </span>
+      </div>
+
+      <div class="menubar" id="menubar">
+        <button class="mi" data-menu="file">File</button>
+        <button class="mi" data-menu="rith">Rithvika</button>
+        <button class="mi" data-menu="help">Help</button>
+        <span class="menu-right">
+          <button class="mi" id="soundBtn" title="Sound">♪ ON</button>
+        </span>
+      </div>
+
+      <div id="hud">
+        <div class="hud-row">
+          <span class="hud-lab">LVL <b id="hudLevel">1</b></span>
+          <div class="bar xpbar" title="RITHVIKA XP">
+            <div class="bar-fill" id="xpFill"></div>
+            <span class="bar-text" id="xpText">0 XP</span>
+          </div>
+          <button class="btn floppy" id="saveBtn" title="Save game">
+            <span class="fd" aria-hidden="true"></span> SAVE
+          </button>
+        </div>
+        <div class="hud-row hud-row-2">
+          <span class="hud-lab">KNOWLEDGE</span>
+          <div class="bar kbar" title="Knowledge of Rithvika">
+            <div class="bar-fill" id="kFill"></div>
+            <span class="bar-text" id="kText">50%</span>
+          </div>
+          <span class="hud-lab hud-sanity" id="sanityWrap">SANITY <b id="hudSanity">100%</b></span>
+        </div>
+      </div>
+
+      <div id="viewport">
+        <div id="stagewrap">
+          <div id="stage">
+            <canvas id="bg" width="320" height="180"></canvas>
+            <div id="actors"></div>
+            <div id="stageFx"></div>
+          </div>
+          <div id="dpad" aria-hidden="false">
+            <button class="dp up"    data-dir="up">▲</button>
+            <button class="dp left"  data-dir="left">◀</button>
+            <button class="dp right" data-dir="right">▶</button>
+            <button class="dp down"  data-dir="down">▼</button>
+            <button class="dp act" id="actBtn">E</button>
+          </div>
+        </div>
+        <div id="panel"></div>
+      </div>
+
+      <div id="statusbar">
+        <span id="stWorld">BOOT</span>
+        <span id="stHint">Arrow keys / WASD to move · E or tap to interact</span>
+      </div>
+    </div>
+
+    <div id="modals"></div>
+    <div id="toasts"></div>
+  </div>
+  <div id="scanlines" aria-hidden="true"></div>
+  <div id="flash" aria-hidden="true"></div>
+</div>
+
+<script src="js/gameData.js"></script>
+<script src="js/pixel.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/state.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/world.js"></script>
+<script src="js/scenes/boot.js"></script>
+<script src="js/scenes/home.js"></script>
+<script src="js/scenes/office.js"></script>
+<script src="js/scenes/grocery.js"></script>
+<script src="js/scenes/city.js"></script>
+<script src="js/scenes/mind.js"></script>
+<script src="js/scenes/finale.js"></script>
+<script src="js/game.js"></script>
+</body>
+</html>
