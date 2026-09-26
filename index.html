@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Happy Birthday Monish</title>
+<meta name="description" content="A little world I made for your birthday.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect x='5' y='16' width='22' height='11' rx='3' fill='%23F4696D'/><rect x='8' y='11' width='16' height='7' rx='2.5' fill='%23FBE0B8'/><rect x='15' y='5' width='2' height='6' rx='1' fill='%23A9D4DC'/><circle cx='16' cy='3.5' r='2.2' fill='%23F6C244'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===== illustration sprite (hidden; referenced with <use>) ===== -->
+<svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
+
+  <symbol id="ico-heart" viewBox="0 0 32 29">
+    <path d="M16 27C8 20.5 2 16 2 9.8 2 5.5 5.4 2 9.6 2c2.6 0 4.9 1.3 6.4 3.3C17.5 3.3 19.8 2 22.4 2 26.6 2 30 5.5 30 9.8 30 16 24 20.5 16 27z"/>
+  </symbol>
+
+  <symbol id="ico-heart-broken" viewBox="0 0 32 29">
+    <path d="M15 27C7.6 20.6 2 16 2 9.8 2 5.5 5.4 2 9.6 2c2.4 0 4.6 1.1 6.1 2.9L13 10l3.6 3-2.4 4.2 1.8 3z"/>
+    <path d="M17.5 27c7.4-6.4 12.5-11 12.5-17.2C30 5.5 26.6 2 22.4 2c-2.4 0-4.6 1.1-6.1 2.9L19 10l-3.6 3 2.4 4.2-1.3 3z"/>
+  </symbol>
+
+  <symbol id="ico-cloud" viewBox="0 0 32 32">
+    <path d="M8.5 21A6.5 6.5 0 0 1 9 8a7.5 7.5 0 0 1 14.2 2.2A5.4 5.4 0 0 1 22.5 21z"/>
+    <path d="M11 24.2a1.7 1.7 0 0 1 3.4 0 1.7 1.7 0 0 1-3.4 0zM17.6 26.8a1.7 1.7 0 0 1 3.4 0 1.7 1.7 0 0 1-3.4 0z"/>
+  </symbol>
+
+  <symbol id="ico-gift" viewBox="0 0 32 32">
+    <path d="M4 14h24v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2z"/>
+    <path d="M2 8h28v6H2z"/>
+    <path d="M13.5 8h5v22h-5z" opacity=".55"/>
+    <path d="M16 8S13.5 2 10 2 6 7 10 8zM16 8s2.5-6 6-6 4 5 0 6z" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  </symbol>
+
+  <symbol id="ico-sound-on" viewBox="0 0 24 24">
+    <path d="M4 9h3.5L13 4.5v15L7.5 15H4z"/>
+    <path d="M16.5 8.5a5 5 0 0 1 0 7M19.2 5.8a9 9 0 0 1 0 12.4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="ico-sound-off" viewBox="0 0 24 24">
+    <path d="M4 9h3.5L13 4.5v15L7.5 15H4z"/>
+    <path d="M16.5 9.5l5 5M21.5 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  </symbol>
+
+  <symbol id="ico-wind" viewBox="0 0 24 24">
+    <path d="M2 8h11a3 3 0 1 0-3-3M2 13h15a3 3 0 1 1-3 3M2 18h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+  <!-- hub illustration: two hearts, a ribbon and sparkles -->
+  <symbol id="art-hearts" viewBox="0 0 200 200">
+    <ellipse cx="100" cy="170" rx="62" ry="10" fill="#E6F0EC"/>
+    <path d="M132 148c-26-20-44-34-44-55 0-14 11-25 25-25 8 0 15 4 19 10 4-6 11-10 19-10 14 0 25 11 25 25 0 21-18 35-44 55z" fill="#A9D4DC"/>
+    <path d="M132 148c-26-20-44-34-44-55 0-14 11-25 25-25 8 0 15 4 19 10" fill="#8FC4CF"/>
+    <path d="M76 162C44 138 22 121 22 95c0-17 13-31 30-31 9 0 18 5 24 12 6-7 15-12 24-12 17 0 30 14 30 31 0 26-22 43-54 67z" fill="#F4696D"/>
+    <path d="M52 78c-9 5-15 14-15 24" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" opacity=".75"/>
+    <g fill="#F6C244">
+      <path d="M168 44l4 11 11 4-11 4-4 11-4-11-11-4 11-4z"/>
+      <path d="M30 34l3 8 8 3-8 3-3 8-3-8-8-3 8-3z"/>
+    </g>
+    <circle cx="178" cy="110" r="5" fill="#B2D3CC"/>
+    <circle cx="16" cy="128" r="4" fill="#F4696D" opacity=".6"/>
+  </symbol>
+
+  <!-- game card: basket catching hearts -->
+  <symbol id="art-catch" viewBox="0 0 120 120">
+    <path d="M42 34c-7-5-5-15 3-15 6 0 9 5 9 10 0-5 3-10 9-10 8 0 10 10 3 15-4 3-8 6-12 11-4-5-8-8-12-11z" fill="#F4696D"/>
+    <path d="M88 52c-5-4-4-11 2-11 4 0 7 4 7 7 0-3 2-7 6-7 6 0 8 7 3 11-3 2-6 4-9 8-3-4-6-6-9-8z" fill="#F6C244"/>
+    <path d="M18 70h84l-9 34a6 6 0 0 1-6 5H33a6 6 0 0 1-6-5z" fill="#E0A971"/>
+    <path d="M24 84h72M28 97h64" stroke="#fff" stroke-width="5" stroke-linecap="round" opacity=".55" fill="none"/>
+    <rect x="12" y="60" width="96" height="14" rx="7" fill="#C98E5B"/>
+  </symbol>
+
+  <!-- game card: two chat bubbles, one asking, one loving -->
+  <symbol id="art-quiz" viewBox="0 0 120 120">
+    <path d="M14 22h62a10 10 0 0 1 10 10v28a10 10 0 0 1-10 10H40L24 84V70h-10a10 10 0 0 1-10-10V32a10 10 0 0 1 10-10z" fill="#F4696D"/>
+    <path d="M45 56v-3c0-5 7-6 7-12 0-4-3-7-7-7s-7 3-7 7" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+    <circle cx="45" cy="63" r="4" fill="#fff"/>
+    <path d="M106 54H66a8 8 0 0 0-8 8v20a8 8 0 0 0 8 8h26l14 12V90a8 8 0 0 0 8-8V62a8 8 0 0 0-8-8z" fill="#A9D4DC"/>
+    <path d="M86 84c-8-6-13-10-13-16 0-4 3-7 7-7 2 0 4 1 6 3 2-2 4-3 6-3 4 0 7 3 7 7 0 6-5 10-13 16z" fill="#fff"/>
+  </symbol>
+
+</svg>
+
+<div class="stage">
+  <div class="stage__bands" aria-hidden="true"></div>
+
+  <!-- decorative doodles ------------------------------------------------ -->
+  <div class="doodles" aria-hidden="true">
+    <svg class="doodle doodle--heart-a" viewBox="0 0 64 58"><path d="M32 54C16 42 4 33 4 20 4 11 11 4 20 4c5 0 9 2 12 6 3-4 7-6 12-6 9 0 16 7 16 16 0 13-12 22-28 34z"/></svg>
+    <svg class="doodle doodle--heart-b" viewBox="0 0 64 58"><path d="M32 54C16 42 4 33 4 20 4 11 11 4 20 4c5 0 9 2 12 6 3-4 7-6 12-6 9 0 16 7 16 16 0 13-12 22-28 34z"/></svg>
+    <svg class="doodle doodle--heart-c" viewBox="0 0 64 58"><path d="M32 54C16 42 4 33 4 20 4 11 11 4 20 4c5 0 9 2 12 6 3-4 7-6 12-6 9 0 16 7 16 16 0 13-12 22-28 34z"/></svg>
+    <svg class="doodle doodle--squiggle" viewBox="0 0 120 60"><path d="M4 48c14 0 22-10 22-20S18 8 10 12s-4 22 10 26 34-6 42-16"/></svg>
+    <svg class="doodle doodle--cloud" viewBox="0 0 260 110"><path d="M0 110V70c0-22 18-40 40-40 6 0 12 1 17 4C64 15 84 0 108 0c28 0 51 21 55 48 4-2 9-3 14-3 18 0 33 15 33 33 0 12-6 23-16 29z"/></svg>
+    <svg class="doodle doodle--sprig" viewBox="0 0 120 120"><g><path d="M60 118V54"/><path d="M60 62C46 56 34 40 34 22c16 2 28 18 26 40z"/><path d="M60 62c14-6 26-22 26-40-16 2-28 18-26 40z"/><path d="M60 80c-11-4-20-16-20-30 12 2 22 14 20 30z"/></g><circle cx="24" cy="74" r="4"/><circle cx="96" cy="66" r="5"/><circle cx="84" cy="94" r="3.5"/></svg>
+  </div>
+
+  <!-- nav --------------------------------------------------------------- -->
+  <header class="nav">
+    <div class="nav__logo">
+      <svg viewBox="0 0 64 58" aria-hidden="true"><path d="M32 54C16 42 4 33 4 20 4 11 11 4 20 4c5 0 9 2 12 6 3-4 7-6 12-6 9 0 16 7 16 16 0 13-12 22-28 34z"/></svg>
+      <span>our<br>day</span>
+    </div>
+    <nav class="nav__links" aria-label="Sections">
+      <button type="button" data-goto="cake" data-group="cake" class="is-active">YOUR CAKE</button>
+      <button type="button" data-goto="hub" data-group="play">LET'S PLAYYY!</button>
+    </nav>
+    <button type="button" class="nav__sound" id="soundToggle" aria-pressed="true" title="Sound on/off">
+      <svg class="ico" aria-hidden="true"><use href="#ico-sound-on" id="soundIcon"></use></svg>
+      <span class="sr-only">Toggle sound</span>
+    </button>
+  </header>
+
+  <main class="stage__body">
+
+    <!-- ========== SCREEN 1: CAKE ========== -->
+    <section class="screen screen--split is-active" id="screen-cake">
+      <div class="circle-frame">
+        <div class="cake" id="cake">
+          <button type="button" class="cake__hit" id="cakeHit" aria-label="Blow out the candle">
+            <span class="cake__flame" id="flame"><i></i></span>
+            <span class="cake__smoke" id="smoke" aria-hidden="true"></span>
+            <span class="cake__wick"></span>
+            <span class="cake__candle"></span>
+          </button>
+          <div class="cake__tier cake__tier--top"><span class="drip"></span></div>
+          <div class="cake__tier cake__tier--mid"><span class="drip"></span></div>
+          <div class="cake__tier cake__tier--btm"><span class="drip"></span></div>
+          <div class="cake__plate"></div>
+        </div>
+      </div>
+
+      <div class="copy">
+        <p class="kicker" id="kicker">Happy Birthday</p>
+        <h1 class="display"><span class="display__l1" id="title1">HAPPY BIRTHDAY</span><span class="display__l2" id="title2">MONISH</span></h1>
+
+        <div class="card">
+          <p id="cakeText">Make a wish, then blow out the candle.</p>
+          <p class="card__hint" id="cakeHint">Can't blow? Just tap the flame.</p>
+        </div>
+
+        <div class="row">
+          <button type="button" class="pill" id="micBtn">
+            <svg class="ico" aria-hidden="true"><use href="#ico-wind"></use></svg>
+            <span id="micLabel">Use my breath</span>
+          </button>
+          <button type="button" class="pill pill--ghost is-hidden" id="toHub" data-goto="hub">
+            <svg class="ico" aria-hidden="true"><use href="#ico-heart"></use></svg>
+            <span>Let's play</span>
+          </button>
+        </div>
+        <p class="meter" id="meter" aria-hidden="true"><span id="meterFill"></span></p>
+      </div>
+    </section>
+
+    <!-- ========== SCREEN 2: HUB ========== -->
+    <section class="screen screen--split" id="screen-hub" hidden>
+      <div class="circle-frame circle-frame--art">
+        <svg class="art" viewBox="0 0 200 200" aria-hidden="true"><use href="#art-hearts"></use></svg>
+      </div>
+
+      <div class="copy">
+        <p class="kicker">a little world for you</p>
+        <h2 class="display"><span class="display__l1" id="hubTitle1">IT'S YOUR</span><span class="display__l2" id="hubTitle2">DAY</span></h2>
+
+        <div class="card">
+          <p id="hubMessage"></p>
+          <p class="card__sig" id="signature"></p>
+        </div>
+
+        <div class="games">
+          <button type="button" class="game-card" data-goto="catch">
+            <svg class="game-card__art" viewBox="0 0 120 120" aria-hidden="true"><use href="#art-catch"></use></svg>
+            <span class="game-card__text">
+              <strong id="catchTitle"></strong>
+              <em id="catchBlurb"></em>
+            </span>
+          </button>
+          <button type="button" class="game-card" data-goto="quiz">
+            <svg class="game-card__art" viewBox="0 0 120 120" aria-hidden="true"><use href="#art-quiz"></use></svg>
+            <span class="game-card__text">
+              <strong id="quizTitle"></strong>
+              <em id="quizBlurb"></em>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCREEN 3: CATCH ========== -->
+    <section class="screen screen--game" id="screen-catch" hidden>
+      <div class="game-head">
+        <button type="button" class="back" data-goto="hub">&#8592; back</button>
+        <h2 class="game-head__title" id="catchHeading"></h2>
+        <div class="game-head__stats">
+          <span class="stat">Score <b id="catchScore">0</b></span>
+          <span class="stat">Best <b id="catchBest">0</b></span>
+          <span class="stat stat--lives" id="catchLives" aria-label="Lives"></span>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="catchCanvas" aria-label="Catch the falling hearts"></canvas>
+
+        <div class="overlay is-active" id="catchStart">
+          <div class="overlay__box">
+            <svg class="overlay__art" viewBox="0 0 120 120" aria-hidden="true"><use href="#art-catch"></use></svg>
+            <h3>Catch My Hearts</h3>
+            <p>Move the basket with your finger, mouse, or arrow keys.</p>
+            <ul class="legend">
+              <li><svg class="ico ico--heart" aria-hidden="true"><use href="#ico-heart"></use></svg> hearts are points</li>
+              <li><svg class="ico ico--gift" aria-hidden="true"><use href="#ico-gift"></use></svg> gifts give a life</li>
+              <li><svg class="ico ico--broken" aria-hidden="true"><use href="#ico-heart-broken"></use></svg> broken hearts cost one</li>
+              <li><svg class="ico ico--cloud" aria-hidden="true"><use href="#ico-cloud"></use></svg> never catch the overthinking cloud</li>
+            </ul>
+            <button type="button" class="pill" id="catchPlay">Start</button>
+          </div>
+        </div>
+
+        <div class="overlay" id="catchOver">
+          <div class="overlay__box">
+            <h3 id="catchOverTitle">Game over</h3>
+            <p class="overlay__score"><b id="catchFinal">0</b> hearts</p>
+            <p id="catchMsg"></p>
+            <button type="button" class="pill" id="catchAgain">Play again</button>
+            <button type="button" class="pill pill--ghost" data-goto="hub">Back home</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SCREEN 4: QUIZ ========== -->
+    <section class="screen screen--game" id="screen-quiz" hidden>
+      <div class="game-head">
+        <button type="button" class="back" data-goto="hub">&#8592; back</button>
+        <h2 class="game-head__title" id="quizHeading"></h2>
+        <div class="game-head__stats">
+          <span class="stat">Score <b id="quizScore">0</b></span>
+        </div>
+      </div>
+
+      <div class="quiz">
+        <div class="dots" id="quizDots" aria-hidden="true"></div>
+
+        <div class="quiz__card" id="quizCard">
+          <p class="quiz__count" id="quizCount"></p>
+          <h3 class="quiz__q" id="quizQ"></h3>
+          <div class="quiz__options" id="quizOptions"></div>
+          <div class="quiz__note" id="quizNote" hidden>
+            <svg class="ico" aria-hidden="true"><use href="#ico-heart" id="noteIcon"></use></svg>
+            <span id="quizNoteText"></span>
+          </div>
+          <button type="button" class="pill is-hidden" id="quizNext">Next</button>
+        </div>
+
+        <div class="quiz__card quiz__card--result is-hidden" id="quizResult">
+          <svg class="overlay__art" viewBox="0 0 200 200" aria-hidden="true"><use href="#art-hearts"></use></svg>
+          <h3>You scored</h3>
+          <p class="overlay__score"><b id="quizFinal">0</b> / <span id="quizTotal">0</span></p>
+          <p id="quizMsg"></p>
+          <button type="button" class="pill" id="quizAgain">Play again</button>
+          <button type="button" class="pill pill--ghost" data-goto="hub">Back home</button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<script src="js/data.js"></script>
+<script src="js/hub.js"></script>
+<script src="js/candle.js"></script>
+<script src="js/games/catch.js"></script>
+<script src="js/games/quiz.js"></script>
+</body>
+</html>

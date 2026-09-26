@@ -1,0 +1,4 @@
+# original template download — kept locally, not in the repo
+*.zip
+
+.DS_Store
