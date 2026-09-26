@@ -158,7 +158,7 @@
 
   /* ---------- section router ---------- */
 
-  const SCREENS = ["cake", "hub", "catch", "quiz", "day"];
+  const SCREENS = ["cake", "hub", "catch", "quiz"];
   let current = "cake";
   const listeners = { enter: {}, leave: {} };
 
@@ -228,11 +228,6 @@
   text("quizTitle", DATA.quizTitle);
   text("quizBlurb", DATA.quizBlurb);
   text("quizHeading", DATA.quizTitle);
-  text("dayTitle", DATA.dayTitle);
-  text("dayBlurb", DATA.dayBlurb);
-  text("dayHeading", DATA.dayTitle);
-  text("dayStartTitle", DATA.dayTitle);
-  text("dayStartText", DATA.dayIntro);
   text("exeTitle", DATA.exeTitle);
   text("exeBlurb", DATA.exeBlurb);
 

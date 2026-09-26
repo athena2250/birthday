@@ -13,20 +13,6 @@
   --ink:#3F4A57;
   --grid:rgba(255,255,255,.28);
 
-  /* ---- Rithu ----
-     Flat blocks plus one consistent dark outline: the chunky 90s
-     game look, drawn smooth so her face still reads. */
-  --skin:#C5865A;
-  --skin-shade:#A96F47;
-  --hair:#2B1E17;
-  --hair-lite:#4E382A;
-  --top-grey:#8D949C;
-  --top-grey-shade:#727A83;
-  --jeans:#56677E;
-  --shoe:#3F4A57;
-  --line:#3A2A20;
-  --gold:#F6C244;
-
   --radius-card:28px;
   --shadow-soft:0 18px 40px rgba(0,0,0,.10);
   --shadow-pop:0 8px 0 rgba(0,0,0,.08);
@@ -444,7 +430,6 @@ body{
 
 #confetti{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:50}
 
-
 /* ---------- illustrations & icons ---------- */
 
 .sprite{position:absolute;width:0;height:0;overflow:hidden}
@@ -474,216 +459,6 @@ body{
 .quiz__note .ico{width:19px;height:19px;margin-top:2px;color:var(--coral)}
 .quiz__note.is-wrong .ico{color:#9AA4AF}
 
-/* =========================================================
-   A Day With Me — the room, the objects, the checklist
-   ========================================================= */
-
-.day{
-  flex:1;display:grid;gap:16px;
-  grid-template-columns:minmax(0,1fr) 15rem;
-  align-items:start;min-height:0;
-}
-
-.day-stage{
-  position:relative;overflow:hidden;
-  border-radius:22px;box-shadow:var(--shadow-soft);
-  background:var(--mint-pale);
-  /* the rooms are drawn on a 160x100 grid and every object is placed as a
-     percentage of this box, so the box has to keep that ratio */
-  aspect-ratio:16/10;
-  width:100%;
-}
-.day-bg{position:absolute;inset:0;width:100%;height:100%;display:block}
-
-/* ---- the things in the room ---- */
-
-.day-objs{position:absolute;inset:0}
-
-.day-obj{
-  position:absolute;transform:translate(-50%,-50%);
-  width:clamp(46px,8%,86px);aspect-ratio:1;
-  padding:0;border:0;background:none;cursor:pointer;
-  border-radius:50%;
-  transition:transform .16s ease,filter .16s ease,opacity .35s ease;
-  filter:drop-shadow(0 3px 0 rgba(0,0,0,.14));
-}
-.day-obj__art{width:100%;height:100%;display:block}
-.day-obj__art *{stroke:var(--line);stroke-width:1.7;stroke-linejoin:round;paint-order:stroke fill}
-
-.day-obj:hover,.day-obj:focus-visible{transform:translate(-50%,-50%) scale(1.14)}
-.day-obj:focus-visible{outline:3px solid var(--white);outline-offset:3px}
-.day-obj.is-wrong{animation:shake .32s}
-.day-obj.is-taken{opacity:0;transform:translate(-50%,-140%) scale(.5);pointer-events:none}
-
-/* ---- her ---- */
-
-.day-rithu{
-  position:absolute;left:50%;bottom:4%;
-  width:clamp(74px,13%,132px);
-  transform:translateX(-50%);
-  transition:left .6s ease-in-out;
-}
-
-.day-bubble{
-  position:absolute;left:50%;bottom:20%;
-  transform:translateX(-50%);
-  max-width:min(18rem,72%);
-  background:var(--white);color:var(--ink);
-  padding:9px 14px;border-radius:16px;
-  font-size:0.84375rem;line-height:1.45;text-align:center;
-  box-shadow:var(--shadow-soft);
-  animation:fadeUp .22s ease both;
-  pointer-events:none;
-}
-.day-bubble::after{
-  content:"";position:absolute;left:50%;bottom:-7px;
-  transform:translateX(-50%);
-  border:8px solid transparent;border-top-color:var(--white);border-bottom:0;
-}
-
-/* ---- the checklist ---- */
-
-.day-panel{
-  background:var(--white);border-radius:22px;padding:18px;
-  box-shadow:var(--shadow-soft);align-self:start;
-}
-.day-panel__name{
-  margin:0 0 12px;font-family:var(--font-display);font-weight:800;
-  font-size:0.9375rem;color:var(--coral);line-height:1.3;
-}
-.day-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.day-list__item{
-  display:flex;align-items:flex-start;gap:9px;
-  font-size:0.84375rem;line-height:1.4;
-  transition:opacity .25s ease;
-}
-.day-list__item .ico{width:15px;height:15px;margin-top:2px;color:var(--coral);flex:none}
-.day-list__item.is-done{opacity:.45}
-.day-list__item.is-done span{text-decoration:line-through}
-.day-list__item.is-done .ico{color:#6FCF97}
-
-#dayTimeStat.is-low b{color:var(--coral-deep)}
-#dayTimeStat.is-low{animation:pop .5s ease infinite}
-
-/* ---- the dance card ---- */
-
-.overlay__box--dance{max-width:24rem}
-.day-dance{width:min(11rem,44vw);margin:0 auto 6px}
-.day-finale{
-  font-family:var(--font-display);font-weight:600;
-  color:var(--coral);font-size:0.9375rem;
-}
-
-/* =========================================================
-   Rithu — the character rig (markup lives in js/rithu.js)
-
-   Everything here moves a named part. The only thing the game
-   ever changes is data-pose on .rithu, plus .is-flipped on the
-   wrapping <svg> to face her the other way.
-   ========================================================= */
-
-.rithu-svg{width:100%;height:100%;overflow:visible;display:block;transition:transform .2s ease}
-.rithu-svg.is-flipped{transform:scaleX(-1)}
-
-.rithu{
-  stroke:var(--line);
-  stroke-width:2.4;
-  stroke-linejoin:round;
-  stroke-linecap:round;
-}
-
-/* parts rotate around real joints, not their bounding boxes */
-.rithu .r-head     {transform-box:view-box;transform-origin:60px 82px}
-.rithu .r-hair-back{transform-box:view-box;transform-origin:60px 22px}
-.rithu .r-body     {transform-box:view-box;transform-origin:60px 126px}
-.rithu .r-arm-l    {transform-box:view-box;transform-origin:78px 89px}
-.rithu .r-arm-r    {transform-box:view-box;transform-origin:42px 89px}
-.rithu .r-leg-l    {transform-box:view-box;transform-origin:68px 126px}
-.rithu .r-leg-r    {transform-box:view-box;transform-origin:51px 126px}
-.rithu .r-brows    {transform-box:view-box;transform-origin:60px 45px}
-.rithu .eye        {transform-box:fill-box;transform-origin:center}
-
-/* ---- colour ---- */
-.rithu .r-shadow{fill:rgba(63,74,87,.15);stroke:none}
-.rithu .hair{fill:var(--hair)}
-.rithu .hair-lite{fill:none;stroke:var(--hair-lite);stroke-width:2.2;opacity:.75}
-.rithu .skin{fill:var(--skin)}
-.rithu .neck{fill:var(--skin-shade)}
-.rithu .top{fill:var(--top-grey)}
-.rithu .top-shade{fill:var(--top-grey-shade);stroke:none}
-.rithu .jeans{fill:var(--jeans)}
-.rithu .shoe{fill:var(--shoe)}
-.rithu .brow{fill:none;stroke:var(--hair);stroke-width:3}
-.rithu .iris{fill:var(--hair);stroke:none}
-.rithu .glint{fill:#fff;stroke:none}
-.rithu .nose{fill:none;stroke:var(--skin-shade);stroke-width:2.2}
-.rithu .cheek{fill:var(--coral);opacity:.32;stroke:none}
-.rithu .gold{fill:var(--gold);stroke:none}
-.rithu .heart{fill:var(--coral);stroke:none;opacity:0}
-
-.rithu .r-mouth path{fill:none;stroke:#79483A;stroke-width:2.6}
-.rithu .m-grin,.rithu .m-oh{display:none;fill:#79483A}
-.rithu[data-pose="hold"] .m-smile,
-.rithu[data-pose="dance"] .m-smile{display:none}
-.rithu[data-pose="hold"] .m-grin,
-.rithu[data-pose="dance"] .m-grin{display:block}
-.rithu[data-pose="think"] .m-smile{display:none}
-.rithu[data-pose="think"] .m-oh{display:block}
-
-/* ---- keyframes ---- */
-@keyframes r-bob     {from{transform:translateY(0)}   to{transform:translateY(-2.5px)}}
-@keyframes r-blink   {0%,93%,100%{transform:scaleY(1)} 96%{transform:scaleY(.08)}}
-@keyframes r-arm     {from{transform:rotate(-17deg)}  to{transform:rotate(17deg)}}
-@keyframes r-leg     {from{transform:rotate(-13deg)}  to{transform:rotate(13deg)}}
-@keyframes r-hair    {from{transform:rotate(-3deg)}   to{transform:rotate(3deg)}}
-@keyframes r-hop     {0%,100%{transform:translateY(0)} 25%{transform:translateY(-7px)}
-                      50%{transform:translateY(0)}     75%{transform:translateY(-3px)}}
-@keyframes r-sway    {from{transform:rotate(-5deg)}   to{transform:rotate(5deg)}}
-@keyframes r-head-tilt{from{transform:rotate(-6deg)}  to{transform:rotate(6deg)}}
-@keyframes r-arm-l-dance{0%,100%{transform:rotate(-28deg)} 50%{transform:rotate(-122deg)}}
-@keyframes r-arm-r-dance{0%,100%{transform:rotate(122deg)} 50%{transform:rotate(28deg)}}
-@keyframes r-heart   {0%{opacity:0;transform:translateY(4px) scale(.5)}
-                      18%{opacity:.95}
-                      100%{opacity:0;transform:translateY(-42px) scale(1.15)}}
-
-/* she blinks in every pose */
-.rithu .eye{animation:r-blink 5.6s infinite}
-.rithu .eye:last-child{animation-delay:.04s}
-
-/* ---- idle ---- */
-.rithu[data-pose="idle"] .r-head{animation:r-bob 2.7s ease-in-out infinite alternate}
-.rithu[data-pose="idle"] .r-hair-back{animation:r-hair 3.4s ease-in-out infinite alternate}
-
-/* ---- walk ---- */
-.rithu[data-pose="walk"] .r-head {animation:r-bob .24s ease-in-out infinite alternate}
-.rithu[data-pose="walk"] .r-arm-l{animation:r-arm .48s ease-in-out infinite alternate}
-.rithu[data-pose="walk"] .r-arm-r{animation:r-arm .48s ease-in-out infinite alternate-reverse}
-.rithu[data-pose="walk"] .r-leg-l{animation:r-leg .48s ease-in-out infinite alternate-reverse}
-.rithu[data-pose="walk"] .r-leg-r{animation:r-leg .48s ease-in-out infinite alternate}
-.rithu[data-pose="walk"] .r-hair-back{animation:r-hair .48s ease-in-out infinite alternate}
-
-/* ---- hold: one arm up, showing you what she found ---- */
-.rithu[data-pose="hold"] .r-arm-l{transform:rotate(-118deg);transition:transform .25s cubic-bezier(.34,1.56,.64,1)}
-.rithu[data-pose="hold"] .r-head {animation:r-bob 1.1s ease-in-out infinite alternate}
-
-/* ---- think ---- */
-.rithu[data-pose="think"] .r-head {transform:rotate(-7deg)}
-.rithu[data-pose="think"] .r-brows{transform:translateY(-2px) rotate(-5deg)}
-.rithu[data-pose="think"] .r-arm-l{transform:rotate(-96deg)}
-
-/* ---- dance: the whole point of the game ---- */
-.rithu[data-pose="dance"]            {animation:r-hop .9s ease-in-out infinite}
-.rithu[data-pose="dance"] .r-body    {animation:r-sway .45s ease-in-out infinite alternate}
-.rithu[data-pose="dance"] .r-head    {animation:r-head-tilt .45s ease-in-out infinite alternate-reverse}
-.rithu[data-pose="dance"] .r-hair-back{animation:r-hair .6s ease-in-out infinite alternate}
-.rithu[data-pose="dance"] .r-arm-l   {animation:r-arm-l-dance .9s ease-in-out infinite}
-.rithu[data-pose="dance"] .r-arm-r   {animation:r-arm-r-dance .9s ease-in-out infinite}
-.rithu[data-pose="dance"] .r-leg-l   {animation:r-leg .45s ease-in-out infinite alternate}
-.rithu[data-pose="dance"] .r-leg-r   {animation:r-leg .45s ease-in-out infinite alternate-reverse}
-.rithu[data-pose="dance"] .r-hearts path{animation:r-heart 2.1s ease-out infinite}
-.rithu[data-pose="dance"] .r-hearts path:nth-child(2){animation-delay:.7s}
-.rithu[data-pose="dance"] .r-hearts path:nth-child(3){animation-delay:1.4s}
-
 /* ---------- responsive ---------- */
 
 @media (max-width:860px){
@@ -703,9 +478,6 @@ body{
   .nav__links button{padding:9px 11px;font-size:0.75rem;letter-spacing:.6px}
   .stage__body{padding:0 16px 20px}
   .canvas-wrap{min-height:52dvh}
-  .day{grid-template-columns:1fr}
-  .day-obj{width:clamp(40px,9%,64px)}
-  .day-rithu{width:clamp(66px,18%,110px)}
 }
 
 @media (max-width:400px){
@@ -715,12 +487,4 @@ body{
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
-
-  /* the dance still has to land, so hold it as a pose instead of a loop:
-     arms up, hearts out, no bouncing */
-  .rithu[data-pose="dance"] .r-arm-l{transform:rotate(-118deg)}
-  .rithu[data-pose="dance"] .r-arm-r{transform:rotate(118deg)}
-  .rithu[data-pose="dance"] .r-head {transform:rotate(-4deg)}
-  .rithu[data-pose="dance"] .r-hearts path{opacity:.9}
-  .day-dance .rithu-svg{transform:scale(1.04)}
 }
