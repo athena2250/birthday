@@ -72,3 +72,20 @@ js/games/quiz.js    How Well Do You Know Us?
 ```
 
 No build step, no dependencies.
+
+---
+
+## Also in here: RITHVIKA.EXE
+
+`rithvika/` is a separate, self-contained game — a late-90s PC-game version of
+Rithvika's actual life (home, office, grocery store, her head) with an XP bar,
+unlockable memories and a boss made of paperwork. It has its own README:
+[`rithvika/README.md`](rithvika/README.md), and everything personal in it lives
+in one file, [`rithvika/js/gameData.js`](rithvika/js/gameData.js).
+
+Run it the same way:
+
+```bash
+cd birthday/rithvika
+python3 -m http.server 8000
+```
