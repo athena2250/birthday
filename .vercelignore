@@ -1,0 +1,5 @@
+# the original template download — no reason to publish it
+*.zip
+
+.git
+.DS_Store
